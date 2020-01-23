@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -21,6 +21,8 @@
 </template>
 
 <style lang="scss">
+@import './assets/styles/custom.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,13 +30,12 @@
   text-align: center;
   color: #2c3e50;
 }
-
 #nav {
   padding: 30px;
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #ffffff;
 
     &.router-link-exact-active {
       color: #42b983;
