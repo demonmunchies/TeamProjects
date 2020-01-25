@@ -1,5 +1,8 @@
 /*! `Custom` Bootstrap 4 theme */
 
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
 $enable-grid-classes:false;
 $primary:#8e44ad;
 $secondary:#a569bd;
