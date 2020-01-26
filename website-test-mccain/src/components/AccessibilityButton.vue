@@ -1,3 +1,3 @@
 <template>
-    <b-button>Accessibility</b-button>
+  <b-button>Accessibility</b-button>
 </template>
