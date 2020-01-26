@@ -1,30 +1,22 @@
 <template>
   <div id="app">
-  <b-row>
-    <b-col cols="12">
-      <Navbar />
-      <b-row rows id="test">
-        kkkkk
-      </b-row>
-      <b-row>
-        <b-col cols="12">
-          <Footer />
-        </b-col>
-      </b-row>
-    </b-col>
-  </b-row>
+    <body>
+    <header><NavBar /></header>
+    <section class="main-content"><router-view></router-view></section>
+    <footer>...</footer>
+</body>
+
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue";
+// @ is an alias to /src
+import NavBar from "@/components/NavBar.vue"
 export default {
   name: "app",
   components: {
-    Navbar,
-    Footer
-  }
+    NavBar
+  },
 };
 </script>
 
@@ -35,9 +27,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
-
-
 </style>

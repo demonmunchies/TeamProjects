@@ -1,0 +1,17 @@
+/*! `Custom` Bootstrap 4 theme */
+$primary:#8e44ad;
+$secondary:#a569bd;
+$success:#eadaef;
+$danger:#5b2c6f;
+$info:#bb8fce;
+$warning:#884ea0;
+$light:#f8f9fa;
+$dark:#343a40;
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+// Add SASS theme customizations here..
+html {font-size: .8rem;}
+@include media-breakpoint-up(sm) {html {font-size: .9rem;}}
+@include media-breakpoint-up(md) {html {font-size: .9rem;}}
+@include media-breakpoint-up(lg) {html {font-size: 1rem;}}
+
