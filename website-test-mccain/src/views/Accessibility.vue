@@ -1,6 +1,6 @@
 <template>
   <div class="accessibility">
-    <h1>This is a thermostat controls page</h1>
+    <h1>This is an accessibility page</h1>
   </div>
 </template>
 
