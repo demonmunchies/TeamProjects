@@ -8,7 +8,9 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item to="/myprivatelife/" class="active">Home</b-nav-item>
-        <b-nav-item to="/myprivatelife/about">About</b-nav-item>
+        <b-nav-item to="/myprivatelife/thermostat-controls">Thermostat Controls</b-nav-item>
+        <b-nav-item to="/myprivatelife/usage-statistics">Usage Statistics</b-nav-item>
+        <b-nav-item to="/myprivatelife/user-manual">User Manual</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

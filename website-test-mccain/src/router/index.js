@@ -1,8 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import RouteNav from "../views/RouteNav.vue"
+import RouteNav from "../views/RouteNav.vue";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import ThermostatControls from "../views/ThermostatControls.vue";
+import UsageStatistics from "../views/UsageStatistics.vue";
+import UserManual from "../views/UserManual.vue";
+import Accessibility from "../views/Accessibility.vue";
 
 Vue.use(VueRouter);
 
@@ -14,7 +17,10 @@ const routes = [
       // Note we provide the above parent route name on the default child tab
       // route to ensure this tab is rendered by default when using named routes
       { path: '', component: Home, name: '/myprivatelife' },
-      { path: 'about', component: About}
+      { path: 'thermostat-controls', component: ThermostatControls},
+      { path: 'usage-statistics', component: UsageStatistics},
+      { path: 'user-manual', component: UserManual},
+      { path: 'accessibility', component: Accessibility}
     ]
   }
 ];

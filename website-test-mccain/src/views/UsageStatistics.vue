@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
-    <h1>This is a home page</h1>
+  <div class="usage-statistics">
+    <h1>This is a usage statistics page</h1>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 export default {
-  name: "home",
+  name: "usage-statistics",
   components: {
   }
 };
