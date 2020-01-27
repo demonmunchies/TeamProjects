@@ -1,12 +1,12 @@
 <template>
-  <div class="footer">
-    <b-row no-gutters="true">
-      <b-col cols="3">3</b-col>
-      <b-col cols="6">6</b-col>
-      <b-col cols="2">2</b-col>
-      <b-col cols="1"><AccessibilityButton /></b-col>
-    </b-row>
-  </div>
+  <footer class="footer">
+    <b-row no-gutters=true>
+    <b-col cols="3"></b-col>
+    <b-col cols="6">My Private Life</b-col>
+    <b-col cols="2"></b-col>
+    <b-col cols="1"><AccessibilityButton /></b-col>
+  </b-row>
+</footer>
 </template>
 
 <script>
@@ -21,7 +21,15 @@ export default {
 
 <style lang="scss">
 .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  color: #f8f9fa;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .8 rem;
   background-color: #8e44ad;
-  color: white;
 }
 </style>
+
