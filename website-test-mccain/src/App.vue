@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <NavBar />
+    <b-row class="mb-3">
+    </b-row>
     <router-view></router-view>
     <Footer />
   </div>
