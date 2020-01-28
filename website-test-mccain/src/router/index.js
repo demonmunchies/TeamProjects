@@ -6,6 +6,7 @@ import ThermostatControls from "../views/ThermostatControls.vue";
 import UsageStatistics from "../views/UsageStatistics.vue";
 import UserManual from "../views/UserManual.vue";
 import Accessibility from "../views/Accessibility.vue";
+import SetPassword from "../views/SetPassword.vue"
 
 Vue.use(VueRouter);
 
@@ -20,7 +21,8 @@ const routes = [
       { path: 'thermostat-controls', component: ThermostatControls},
       { path: 'usage-statistics', component: UsageStatistics},
       { path: 'user-manual', component: UserManual},
-      { path: 'accessibility', component: Accessibility}
+      { path: 'accessibility', component: Accessibility},
+      { path: 'password-reset', component: SetPassword}
     ]
   }
 ];
