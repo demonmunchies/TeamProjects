@@ -1,5 +1,6 @@
 <template>
-    <b-container class="login">
+  <b-container class="login">
+    <b-row><h3>Login:</h3></b-row>
     <b-row><ActivationForm /></b-row>
     <b-row><PasswordForm  /></b-row>
 </b-container>
