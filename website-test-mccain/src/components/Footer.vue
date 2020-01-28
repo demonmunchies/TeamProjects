@@ -1,5 +1,6 @@
 <template>
   <footer class="footer">
+    <b-row class="mb-1"></b-row>
     <b-row no-gutters=true>
     <b-col cols="3"></b-col>
     <b-col cols="6">My Private Life</b-col>
@@ -27,7 +28,7 @@ export default {
   /* Set the fixed height of the footer here */
   height: 60px;
   color: #f8f9fa;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Comfortaa;
   font-size: .8 rem;
   background-color: #8e44ad;
 }
