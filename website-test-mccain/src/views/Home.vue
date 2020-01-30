@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import LoginPane from "../components/LoginPane.vue"
 export default {
   name: "home",
