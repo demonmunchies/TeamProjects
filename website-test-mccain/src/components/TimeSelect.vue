@@ -1,7 +1,6 @@
 <template>
   <div>
-    <b-form-input v-model="time" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Value: {{ text }}</div>
+    <b-form-input type="time"></b-form-input>
   </div>
 </template>
 
