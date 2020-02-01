@@ -14,4 +14,3 @@
   </b-navbar>
 </div>
 </template>
-
