@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-form  @submit.stop.prevent>
-      <b-input type="password" v-model="userId" :state="validation" id="feedback-user"></b-input>
+      <b-input type="password" v-model="userId" :state="validation" id="confirm-password"></b-input>
       <b-form-invalid-feedback :state="validation">
         Your password must be 5-12 characters long.
       </b-form-invalid-feedback>
