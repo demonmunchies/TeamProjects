@@ -9,6 +9,7 @@
       </b-col>
       <b-col></b-col>
     </b-row>
+    <b-row class="mb-5"></b-row>
     <b-row>
       <b-col>Keyboard Shortcuts:</b-col>
       <b-col></b-col>
