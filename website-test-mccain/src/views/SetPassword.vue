@@ -5,8 +5,8 @@
       <b-col></b-col>
       <b-col>
         <div> Passsword <PasswordSetForm /> </div>
-        <div> Retype Passsword <PasswordSetForm /> </div>
-        <div><b-button>Submit</b-button></div>
+        <div> Retype Passsword <PasswordConfirmForm /> </div>
+        <div><b-button @click="handleClick">Submit</b-button></div>
       </b-col>
       <b-col></b-col>
     </b-row>
@@ -15,10 +15,17 @@
 
 <script>
 import PasswordSetForm from "../components/PasswordSetForm"
+import PasswordConfirmForm from "../components/PasswordConfirmForm"
 export default {
   name: "set-password",
   components: {
-    PasswordSetForm
+    PasswordSetForm,
+    PasswordConfirmForm
+  },
+  methods: {
+    handleClick: function() {
+      alert(PasswordSetForm.userID)
+    }
   }
 };
 </script>
