@@ -4,8 +4,9 @@
     <b-row no-gutters=true>
     <b-col cols="3"></b-col>
     <b-col cols="6">My Private Life</b-col>
-    <b-col cols="2"></b-col>
+    <b-col cols="1"></b-col>
     <b-col cols="1"><AccessibilityButton /></b-col>
+    <b-col cols="1"></b-col>
   </b-row>
 </footer>
 </template>
