@@ -1,5 +1,6 @@
 <template>
   <div>
+    <label for="range-form">Display Interval:</label>
     <b-form-select v-model="selected" :options="options"></b-form-select>
   </div>
 </template>
