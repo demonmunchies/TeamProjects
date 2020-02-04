@@ -6,7 +6,7 @@
       <b-col></b-col>
     </b-row>
     <b-row>
-      <b-col cols ="6"><img src="../assets/MyPrivateLife_Logo.jpg" class="logo"></b-col>
+      <b-col cols ="6"><img src="../assets/MyPrivateLife_Logo.png" class="logo"></b-col>
       <b-col cols="2"></b-col>
       <b-col cols="3"><LoginPane /></b-col>
       <b-col cols="1"></b-col>
