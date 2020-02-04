@@ -1,9 +1,16 @@
 <template>
-  <div>
     <b-card no-body class="text-center" title="Current Temperature">
       <div class="bg-primary text-light">
-        Temperature Here
+        <div> Temperature: {{$store.state.currentTemperature}} </div>
+        <div> Desired Temperature: {{$store.state.desiredTemperature}} </div>
       </div>
     </b-card>
-  </div>
 </template>
+
+<script>
+export default {
+  data() {
+    
+  }
+}
+</script>
