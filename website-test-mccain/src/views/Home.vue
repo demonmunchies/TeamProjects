@@ -11,7 +11,7 @@
       <b-col cols="3"><LoginPane /></b-col>
       <b-col cols="1"></b-col>
     </b-row>
-    <b-row no-gutters=true>
+    <b-row no-gutters>
       <b-col cols ="6"><h5 class="logo-text">The only system that keeps your data secure </h5> </b-col>
       <b-col cols="6"></b-col>
     </b-row>

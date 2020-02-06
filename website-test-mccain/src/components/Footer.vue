@@ -1,7 +1,7 @@
 <template>
   <footer class="myFooter">
     <b-row class="mb-1"></b-row>
-    <b-row no-gutters=true>
+    <b-row no-gutters>
     <b-col cols="3"></b-col>
     <b-col cols="6">My Private Life</b-col>
     <b-col cols="1"></b-col>
