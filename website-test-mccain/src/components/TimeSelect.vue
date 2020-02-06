@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-form-input type="time"></b-form-input>
+    <b-form-input v-model="time" type="time" v-on:click="updateTime"></b-form-input>
   </div>
 </template>
 
@@ -9,6 +9,12 @@
     data() {
       return {
         time: ''
+      }
+    },
+    methods: {
+      updateTime() {
+        console.log(this.time)
+        this.$store.scheduleTime = this.time;
       }
     }
   }
