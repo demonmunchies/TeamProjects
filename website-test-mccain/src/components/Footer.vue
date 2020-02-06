@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="myFooter">
     <b-row class="mb-1"></b-row>
     <b-row no-gutters=true>
     <b-col cols="3"></b-col>
@@ -14,7 +14,7 @@
 <script>
 import AccessibilityButton from "./AccessibilityButton.vue";
 export default {
-  name: "footer",
+  name: "myFooter",
   components: {
     AccessibilityButton
   }
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-.footer {
+.myFooter {
   position: absolute;
   bottom: 0;
   width: 100%;
