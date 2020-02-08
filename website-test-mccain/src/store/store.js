@@ -21,6 +21,9 @@ export const store = new Vuex.Store({
       setScheduleTime(state, newValue) {
         state.scheduleTime = newValue
       },
+      setScheduleTemp(state, newValue) {
+        state.scheduleTemp = newValue
+      },
       addToSchedule(state) {
         state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
       }
@@ -28,6 +31,10 @@ export const store = new Vuex.Store({
     actions: {
       setScheduleTime: ({commit, state}, newValue) => {
         commit("setScheduleTime", newValue)
+        return state.scheduleTime
+      },
+      setScheduleTemp: ({commit, state}, newValue) => {
+        commit("setScheduleTemp", newValue)
         return state.scheduleTime
       },
       addToSchedule({commit}) {
