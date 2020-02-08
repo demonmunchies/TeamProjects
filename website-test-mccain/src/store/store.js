@@ -8,7 +8,7 @@ export const store = new Vuex.Store({
       currentTemperature: 72,
       desiredTemperature: 72,
       schedule: [],
-      scheduleTime: -1,
+      scheduleTime: "",
       scheduleTemp: 72
     },
     mutations: {
@@ -18,14 +18,20 @@ export const store = new Vuex.Store({
       decrementDesiredTemperature(state) {
         state.desiredTemperature--
       },
+      setScheduleTime(state, newValue) {
+        state.scheduleTime = newValue
+      },
       addToSchedule(state) {
-        console.log(state.schedule)
         state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
       }
     },
     actions: {
+      setScheduleTime: ({commit, state}, newValue) => {
+        commit("setScheduleTime", newValue)
+        return state.scheduleTime
+      },
       addToSchedule({commit}) {
         commit("addToSchedule")
-      }
-    }
+      },
+    },
   })
