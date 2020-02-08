@@ -11,7 +11,9 @@
           </b-form-input>
         <b-form-invalid-feedback>
         </b-form-invalid-feedback>
-        <b-form-text id="password-help">Must contain at least one upercase letter, lowercase letter, number, and special character. No spaces.</b-form-text>
+        <div id="password-help" :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
+          <font size="2">Must contain at least one upercase letter, lowercase letter, number, and special character. No spaces.</font>
+          </div>
       </b-row>
       <b-row>
         <label for="confirm-pass">Retype Password:</label>
@@ -19,8 +21,8 @@
           aria-describedby="inalid-feedback"
           placeholder="Retype password">
           </b-form-input>
-        <b-form-invalid-feedback>
-          Passwords don't match
+        <b-form-invalid-feedback :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
+          <font size="2">Passwords don't match</font>
         </b-form-invalid-feedback>
       </b-row>
       <b-row><b-button :disabled='isDisabled'>Submit</b-button></b-row>

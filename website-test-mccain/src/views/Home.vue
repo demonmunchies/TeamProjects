@@ -2,7 +2,7 @@
   <div class="home">
     <b-row class="mb-5">
       <b-col></b-col>
-      <b-col><h1 class="welcome-text">Welcome</h1></b-col>
+      <b-col><h1 class="welcome-text" :style="{'color': $store.state.textColor}">Welcome</h1></b-col>
       <b-col></b-col>
     </b-row>
     <b-row>
@@ -12,7 +12,7 @@
       <b-col cols="1"></b-col>
     </b-row>
     <b-row no-gutters>
-      <b-col cols ="6"><h5 class="logo-text">The only system that keeps your data secure </h5> </b-col>
+      <b-col cols ="6"><h5 class="logo-text" :style="{'color': $store.state.textColor}">The only system that keeps your data secure </h5> </b-col>
       <b-col cols="6"></b-col>
     </b-row>
     </div>

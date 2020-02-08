@@ -11,11 +11,9 @@
       <div>
         <b-form>
           <label for="text-password">Password</label>
-          <b-input type="password" v-model="password" aria-describedby="password-reset-block"></b-input>
-          <router-link to="/myprivatelife/password-reset">
-            <b-form-text id="password-reset-block">
-              Reset your password
-            </b-form-text>
+          <b-input type="password" v-model="password"></b-input>
+          <router-link to="/myprivatelife/password-reset" :style="{'color': $store.state.textColor}">
+              <font size="2">Reset your password</font>
           </router-link>
         </b-form>
       </div>
