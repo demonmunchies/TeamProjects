@@ -3,9 +3,8 @@
     <b-row>
       <b-col></b-col>
       <b-col>
-        <div>Background: <AccessibilityColor /></div>
-        <div>Text: <AccessibilityColor /></div>
-        <div>Graph: <AccessibilityColor /></div>
+        <div>Background: <AccessibilityBackgroundColor /></div>
+        <div>Text: <AccessibilityTextColor /></div>
       </b-col>
       <b-col></b-col>
     </b-row>
@@ -19,11 +18,13 @@
 </template>
 
 <script>
-import AccessibilityColor from "../components/AccessibilityColor";
+import AccessibilityBackgroundColor from "../components/AccessibilityBackgroundColor";
+import AccessibilityTextColor from "../components/AccessibilityTextColor";
 export default {
   name: "accessibility",
   components: {
-    AccessibilityColor
+    AccessibilityBackgroundColor,
+    AccessibilityTextColor
   }
 };
 </script>

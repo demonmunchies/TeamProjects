@@ -9,7 +9,9 @@ export const store = new Vuex.Store({
       desiredTemperature: 72,
       schedule: [],
       scheduleTime: "",
-      scheduleTemp: 72
+      scheduleTemp: 72,
+      backgroundColor: '#ffffff',
+      textColor: '#2c3e50'
     },
     mutations: {
       incrementDesiredTemperature(state) {
@@ -23,6 +25,12 @@ export const store = new Vuex.Store({
       },
       setScheduleTemp(state, newValue) {
         state.scheduleTemp = newValue
+      },
+      setBackgroundColor(state, newValue) {
+        state.backgroundColor = newValue
+      },
+      setTextColor(state, newValue) {
+        state.textColor = newValue
       },
       addToSchedule(state) {
         state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
@@ -40,5 +48,13 @@ export const store = new Vuex.Store({
       addToSchedule({commit}) {
         commit("addToSchedule")
       },
-    },
+      setBackgroundColor: ({commit, state}, newValue) => {
+        commit("setBackgroundColor", newValue)
+        return state.backgroundColor
+      },
+      setTextColor: ({commit, state}, newValue) => {
+        commit("setTextColor", newValue)
+        return state.textColor
+      }
+    }
   })
