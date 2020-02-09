@@ -11,14 +11,22 @@ export const store = new Vuex.Store({
       scheduleTime: "",
       scheduleTemp: 72,
       backgroundColor: '#ffffff',
-      textColor: '#2c3e50'
+      textColor: '#2c3e50',
+      range: "",
+      date: ""
     },
     mutations: {
       incrementDesiredTemperature(state) {
-        state.desiredTemperature++
+        if(state.desiredTemperature < 85)
+        {
+          state.desiredTemperature++
+        }
       },
       decrementDesiredTemperature(state) {
-        state.desiredTemperature--
+        if(state.desiredTemperature > 60)
+        {
+          state.desiredTemperature--
+        }
       },
       setScheduleTime(state, newValue) {
         state.scheduleTime = newValue
@@ -26,14 +34,33 @@ export const store = new Vuex.Store({
       setScheduleTemp(state, newValue) {
         state.scheduleTemp = newValue
       },
+      addToSchedule(state) {
+        var found = false
+        for(var index = 0; index < state.schedule.length; index++) 
+        { 
+          if(state.schedule[index].time == state.scheduleTime)
+          {
+            state.schedule[index].temp = state.scheduleTemp
+            found = true
+          }
+        } 
+        if(found == false)
+        {
+          state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
+        }
+        console.log(state.schedule)
+      },
       setBackgroundColor(state, newValue) {
         state.backgroundColor = newValue
       },
       setTextColor(state, newValue) {
         state.textColor = newValue
       },
-      addToSchedule(state) {
-        state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
+      setRange(state, newValue) {
+        state.range = newValue
+      },
+      setDate(state, newValue) {
+        state.date = newValue
       }
     },
     actions: {
@@ -55,6 +82,14 @@ export const store = new Vuex.Store({
       setTextColor: ({commit, state}, newValue) => {
         commit("setTextColor", newValue)
         return state.textColor
+      },
+      setRange: ({commit, state}, newValue) => {
+        commit("setRange", newValue)
+        return state.range
+      },
+      setDate: ({commit, state}, newValue) => {
+        commit("setDate", newValue)
+        return state.date
       }
     }
   })

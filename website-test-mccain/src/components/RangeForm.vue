@@ -1,7 +1,7 @@
 <template>
   <div>
     <label for="range-form">Display Interval:</label>
-    <b-form-select v-model="selected" :options="options"></b-form-select>
+    <b-form-select v-model="selected" :options="options" v-on:input="updateRange"></b-form-select>
   </div>
 </template>
 
@@ -18,6 +18,11 @@
           { value: 'year', text: 'Year' }
         ]
       }
-     }
+     },
+     methods: {
+      updateRange() {
+        this.$store.dispatch("setRange", this.selected)
+      }
     }
+  }
 </script>
