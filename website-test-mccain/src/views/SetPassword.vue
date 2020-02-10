@@ -18,7 +18,7 @@
       <b-row>
         <label for="confirm-pass">Retype Password:</label>
         <b-form-input id="confirm-pass" type="password" v-model="confirmPassword" :state="confirmState"
-          aria-describedby="inalid-feedback"
+          aria-describedby="invalid-feedback"
           placeholder="Retype password">
           </b-form-input>
         <b-form-invalid-feedback :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
