@@ -48,7 +48,6 @@ export const store = new Vuex.Store({
         {
           state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
         }
-        console.log(state.schedule)
       },
       setBackgroundColor(state, newValue) {
         state.backgroundColor = newValue
