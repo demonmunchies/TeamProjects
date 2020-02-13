@@ -1,6 +1,6 @@
 <template>
    <b-button class="mb-2">
-      <b-icon icon="chevron-up" v-on:click="incrementDesiredTemperature"></b-icon>
+      <b-icon icon="chevron-up" v-on:click="incrementDesiredTemperature" v-shortkey="['ctrl', 'arrowup']" @shortkey="incrementDesiredTemperature"></b-icon>
     </b-button>
 </template>
 

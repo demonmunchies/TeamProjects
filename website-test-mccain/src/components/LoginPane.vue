@@ -18,7 +18,7 @@
         </b-form>
       </div>
     </b-row>
-    <b-row><b-button>Submit</b-button></b-row>
+    <b-row><b-button v-on:click="loginCheck" v-shortkey="['ctrl', 'enter']" @shortkey="loginCheck">Submit</b-button></b-row>
 </b-container>
 </template>
 
@@ -30,6 +30,11 @@ export default {
     return {
       activationKey: '',
       password: ''
+    }
+  },
+  methods: {
+    loginCheck(){
+      console.log("submit clicked")
     }
   }
 };

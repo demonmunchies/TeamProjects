@@ -25,7 +25,7 @@
           <font size="2">Passwords don't match</font>
         </b-form-invalid-feedback>
       </b-row>
-      <b-row><b-button :disabled='isDisabled'>Submit</b-button></b-row>
+      <b-row><b-button :disabled='isDisabled' v-on:click="setPassword" v-shortkey="['ctrl', 'enter']" @shortkey="setPassword">Submit</b-button></b-row>
     </b-col>
     <b-col></b-col>
   </b-row>
@@ -62,9 +62,13 @@ export default {
         return this.password.length >= 8 && num && specChar && uLetter && lLetter && this.password.indexOf(' ') == -1;;
       },
 
-      passConfirm()
-      {
+      passConfirm() {
         return this.password == this.confirmPassword && this.passCorrect();
+      },
+      setPassword() {
+        if(!this.isDisabled) {
+          console.log("submit clicked")
+        }
       }
   },
   computed: {
