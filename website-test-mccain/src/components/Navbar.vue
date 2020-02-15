@@ -1,7 +1,7 @@
 <template>
     <div>
   <b-navbar type="dark" variant="primary" 
-  v-shortkey="{left: ['ctrl', 'l'], right: ['ctrl', 'r'], accessibility: ['ctrl', 'a'], home: ['ctrl', 'm']}" @shortkey="rotatePage">>
+  v-shortkey="{left: ['ctrl', 'l'], right: ['ctrl', 'r'], accessibility: ['ctrl', 'a'], home: ['ctrl', 'm']}" @shortkey="rotatePage">
     <b-navbar-brand href="#">My Private Life</b-navbar-brand>
       <b-navbar-nav align="center">
         <b-nav-item to="/myprivatelife/" exact exact-active-class="active">Home</b-nav-item>

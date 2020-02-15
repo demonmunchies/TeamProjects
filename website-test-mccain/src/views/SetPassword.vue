@@ -1,7 +1,7 @@
 <template>
   <b-row>
-    <b-col></b-col>
-    <b-col>
+    <b-col class="col-md"></b-col>
+    <b-col class="col-md">
       <b-row>
         <label for="input-pass">Password:</label>
         <b-form-input id="input-pass" type="password" v-model="password" :state="passState"
@@ -27,7 +27,7 @@
       </b-row>
       <b-row><b-button :disabled='isDisabled' v-on:click="setPassword" v-shortkey="['ctrl', 'enter']" @shortkey="setPassword">Submit</b-button></b-row>
     </b-col>
-    <b-col></b-col>
+    <b-col class="col-md"></b-col>
   </b-row>
 </template>
 

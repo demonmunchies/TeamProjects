@@ -1,14 +1,14 @@
 <template>
   <div class="thermostat-controls">
     <b-row>
-    <b-col>
+    <b-col class="col-md">
       <b-jumbotron header="Temperature" lead="Current Temperature and Controls" :style="{ 'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
         <TemperatureDisplay />
         <div>Increase Temperature <TemperatureUpButton /></div>
         <div>Decrease Temperature <TemperatureDownButton /></div>
       </b-jumbotron>
     </b-col>
-    <b-col>
+    <b-col class="col-md">
       <b-jumbotron header="Schedule" lead="Set Thermostat Schedule" :style="{ 'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
         Select Time
         <TimeSelect />
