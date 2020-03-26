@@ -4,7 +4,7 @@ import math
 id = 1
 hour = 0
 minute = 0
-day = 0
+day = 1
 month = 1
 year = 2020
 isoyear = 2020
@@ -29,14 +29,12 @@ for x in range(minutes_in_year):
 	if minute > 59:
 		minute = 0
 		hour += 1
-	if day > 365:
-		day = 0
-		year += 1
-		isoyear += 1
+	if day > 30:
+		day = 1
+		month += 1
 	if weekday > 7:
 		weekday = 0
 		week += 1
-	month = 1 + math.floor(day / 31)
 
 	json_str = """{"_id":{"$numberInt":%d},"Temperature":{"$numberInt":%d},"hour":{"$numberInt":%d},"minute":{"$numberInt":%d},"day":{"$numberInt":%d},"month":{"$numberInt":%d},"year":{"$numberInt":%d},"isoyear":{"$numberInt":%d},"week":{"$numberInt":%d},"weekday":{"$numberInt":%d}}\n""" % (id, temperature, hour, minute, day, month, year, isoyear, week, weekday)
 
