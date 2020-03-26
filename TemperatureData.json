@@ -1,0 +1,2 @@
+{"_id":{"$numberInt":"1"},"Temperature":{"$numberInt":"70"},"hour":{"$numberInt":"5"},"minute":{"$numberInt":"46"},"day":{"$numberInt":"20"},"month":{"$numberInt":"3"},"year":{"$numberInt":"2020"},"isoyear":{"$numberInt":"2020"},"week":{"$numberInt":"12"},"weekday":{"$numberInt":"5"}}
+{"_id":{"$numberInt":"2"},"Temperature":{"$numberInt":"70"},"hour":{"$numberInt":"7"},"minute":{"$numberInt":"24"},"day":{"$numberInt":"20"},"month":{"$numberInt":"3"},"year":{"$numberInt":"2020"},"isoyear":{"$numberInt":"2020"},"week":{"$numberInt":"12"},"weekday":{"$numberInt":"5"}}
