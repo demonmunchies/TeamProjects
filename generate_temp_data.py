@@ -39,3 +39,4 @@ for x in range(minutes_in_year):
 	json_str = """{"_id":{"$numberInt":%d},"Temperature":{"$numberInt":%d},"hour":{"$numberInt":%d},"minute":{"$numberInt":%d},"day":{"$numberInt":%d},"month":{"$numberInt":%d},"year":{"$numberInt":%d},"isoyear":{"$numberInt":%d},"week":{"$numberInt":%d},"weekday":{"$numberInt":%d}}\n""" % (id, temperature, hour, minute, day, month, year, isoyear, week, weekday)
 
 	f.write(json_str)
+f.close()
