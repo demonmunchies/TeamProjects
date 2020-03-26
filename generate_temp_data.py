@@ -30,6 +30,7 @@ for x in range(minutes_in_year):
 		minute = 0
 		hour += 1
 	if day > 365:
+		day = 0
 		year += 1
 		isoyear += 1
 	if weekday > 7:
