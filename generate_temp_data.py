@@ -18,7 +18,7 @@ minutes_in_year = 525600
 f = open("tempdata.dat", "w")
 
 for x in range(minutes_in_year):
-	day += 1
+	minute += 1
 	delta = gauss(0, .1)
 	temperature = temperature + delta
 	if temperature < 60 or temperature > 80:
