@@ -45,23 +45,23 @@ def Day(day,month,year):
             avgTemp = each['avgTemp']
         temps[x] = avgTemp
             
-    x = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    x_values = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
     x_labels = [0,3,6,9,12,15,18,21]
     my_x_ticks = ['12AM','3AM','6AM','9AM','12PM','3PM','6PM','9PM']
 
     i = 0
     j = 0
     for temperature in temps:
-        if temperature < 60 or temperature > 100 :
+        if temperature < 40 or temperature > 100 :
             temps = np.delete(temps,i-j)
-            x = np.delete(x,i-j)
+            x_values = np.delete(x_values,i-j)
             j += 1
         i += 1
     y = temps
     
     fig = plt.figure()
-    plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
-    plt.ylim(60,90) 
+    plt.plot(x_values, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
+    plt.ylim(40,100) 
     plt.xlim(0,24)
     plt.xticks(x_labels,my_x_ticks)
     plt.xlabel("Day %d/%d/%d" % (month,day,year))          # naming the x axis 
@@ -79,7 +79,7 @@ def Week(day, month, year):
     week = entry['week']
     isoyear = entry['isoyear']
 
-    for x in range(0,6):
+    for x in range(0,7):
 
         # Aggregates all the data from the day
         # Then pipes that output into a group to get an average temperature and the lowest ID
@@ -94,23 +94,23 @@ def Week(day, month, year):
             avgTemp = each['avgTemp']
         temps[x] = avgTemp
 
-    x = [0,1,2,3,4,5,6]
-    x_ticks = x
+    x_values = [0,1,2,3,4,5,6]
+    x_ticks = x_values
     my_x_ticks = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
     i = 0
     j = 0
     for temperature in temps:
-        if temperature < 60 or temperature > 100 :
+        if temperature < 50 or temperature > 90 :
             temps = np.delete(temps,i-j)
-            x = np.delete(x,i-j)
+            x_values = np.delete(x_values,i-j)
             j += 1
         i += 1
 
     y = temps   # corresponding y axis values 
     fig = plt.figure()
-    plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
-    plt.ylim(60,100) 
+    plt.plot(x_values, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
+    plt.ylim(50,90) 
     plt.xlim(0,6)
     plt.xticks(x_ticks,my_x_ticks)
     plt.xlabel("Week of %d/%d/%d" % (month,day,year))         # naming the x axis 
@@ -125,7 +125,7 @@ def Week(day, month, year):
 def Month(month, year):
     temps = np.zeros(31)
 
-    for x in range(0,30):
+    for x in range(0,31):
         # Aggregates all the data from each day
         # Then pipes that output into a group to get an average temperature and the lowest ID
         agr = [ { "$match": {"year":year,
@@ -139,25 +139,23 @@ def Month(month, year):
             avgTemp = each['avgTemp']
         temps[x] = avgTemp
 
-    x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+    x_values = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
     my_x_ticks = [1,4,7,10,13,16,19,22,25,28,31]
     i = 0
     j = 0
     for temperature in temps:
-        if temperature < 60 or temperature > 100 :
+        if temperature < 50 or temperature > 90 :
             temps = np.delete(temps,i-j)
-            x = np.delete(x,i-j)
+            x_values = np.delete(x_values,i-j)
             j += 1
         i += 1
-    
-    print(temps)
-    print(x)
+
     month_label = getMonth(month)
 
     y = temps   # corresponding y axis values 
     fig = plt.figure()
-    plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
-    plt.ylim(0,100) 
+    plt.plot(x_values, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
+    plt.ylim(50,90) 
     plt.xlim(1,31)
     plt.xticks(my_x_ticks)
     plt.xlabel("%s %d" % (month_label,year))         # naming the x axis 
@@ -188,7 +186,7 @@ def getMonth(month):
 def Year(year):
     temps = np.zeros(12)
 
-    for x in range(0,11):
+    for x in range(0,12):
         # Aggregates all the data from each day
         # Then pipes that output into a group to get an average temperature and the lowest ID
         agr = [ { "$match": {"year":year,
@@ -201,23 +199,23 @@ def Year(year):
             avgTemp = each['avgTemp']
         temps[x] = avgTemp
 
-    x = [1,2,3,4,5,6,7,8,9,10,11,12]
-    x_ticks = x
+
+    x_values = [1,2,3,4,5,6,7,8,9,10,11,12]
+    x_ticks = x_values
     x_ticks_labels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
     i = 0
     j = 0
     for temperature in temps:
-        if temperature < 60 or temperature > 100 :
+        if temperature < 50 or temperature > 90 :
             temps = np.delete(temps,i-j)
-            x = np.delete(x,i-j)
+            x_values = np.delete(x_values,i-j)
             j += 1
         i += 1
-    
 
     y = temps   # corresponding y axis values 
     fig = plt.figure()
-    plt.plot(x, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
-    plt.ylim(0,100) 
+    plt.plot(x_values, y, color='green', linestyle='dashed', linewidth = 3, marker='o', markerfacecolor='blue', markersize=12)         # setting x and y axis range 
+    plt.ylim(50,90) 
     plt.xlim(1,12)
     plt.xticks(x_ticks,x_ticks_labels)
     plt.xlabel("Year %d" % year)         # naming the x axis 
@@ -245,4 +243,4 @@ def main(select,day,month,year):
         Year(year)
 
 if __name__== "__main__":
-  main(2,20,3,2020)
+  main(3,20,6,2019)
