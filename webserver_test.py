@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 import TemperatureGraphing
+import accountAccess
 import json
 
 app = Flask(__name__)
@@ -49,7 +50,14 @@ def get_every_graph():
 def update_user_passwd():
 	if request.method == 'POST':
 		data = json.loads(request.data)
+		user = data['user']
+		new_user = data['new_user']
+		passwd = data['passwd']
+		new_passwd = data['new_passwd']
+		accountAccess.passChange(user, passwd, new_passwd)
+		accountAccess.userChange(user, passwd, new_user)
 		print(data['data'])
+
 		return data['data']
 
 # Update user defined temperature for house / room
