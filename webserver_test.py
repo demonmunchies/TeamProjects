@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import request
+import TemperatureGraphing
 import json
+
 app = Flask(__name__)
 
 @app.route('/get', methods=['GET'])
@@ -16,19 +18,30 @@ def post_test():
 		return data['data']
 
 # Specific graph wanted
-@app.route('/get_singular_graph', methods='[POST]')
+@app.route('/get_singular_graph', methods=['POST'])
 # Actually update this method to provide functionality
 def get_singular_graph():
 	if request.method == 'POST':
 		data = json.loads(request.data)
+		select = data['select']
+		day = data['day']
+		month = data['month']
+		year = data['year']
+		TemperatureGraphing.webserver_call_individual(select, day, month, year)
 		print(data['data'])
 		return data['data']
 # Every graph wanted
-@app.route('/get_every_graph', methods='[GET]')
+@app.route('/get_every_graph', methods=['POST'])
 # Actually update this method to provide functionality
 def get_every_graph():
-	if request.method == 'GET':
-		return 'WE BE ALL THE GRAPHS!!!'
+	if request.method == 'POST':
+		data = json.loads(request.data)
+		day = data['day']
+		month = data['month']
+		year = data['year']
+		TemperatureGraphing.webserver_call_all(day, month, year)
+		print(data['data'])
+		return data['data']
 
 # Update username and password for website login
 @app.route('/update_user_passwd', methods=['POST'])
@@ -50,9 +63,9 @@ def update_desired_temperature():
 
 # UNSURE IF THIS IS NEEDED
 # Update user defined temperature for house / room
-@app.route('/send_data?', methods=['GET'])
+@app.route('/send_data', methods=['GET'])
 # Actually update this method to provide functionality
-def send_data?():
+def send_data():
 	if request.method == 'GET':
 		return 'Data Sent!!!'
 

@@ -222,8 +222,7 @@ def Year(year):
     return temps
 
 
-
-def main(select,day,month,year):       
+def webserver_call_individual(select, day, month, year):
     if(select==1): # 1 Day selection
         Day(day,month,year)
   
@@ -236,5 +235,14 @@ def main(select,day,month,year):
     if(select==4): # 1 Year
         Year(year)
 
-if __name__== "__main__":
-  main(2,20,2,2020)
+def webserver_call_all(day, month, year):
+    Day(day,month,year)
+    Week(day, month, year)
+    Month(month,year)
+    Year(year)
+
+def main():
+    print("TemperatureGraphing.py started successfully.")
+
+# if __name__== "__main__":
+#   main(2,20,2,2020)
