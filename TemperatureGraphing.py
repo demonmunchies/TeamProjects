@@ -68,7 +68,13 @@ def Day(day,month,year):
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
     plt.show()        # function to show the plot 
+
     fig.savefig(os.path.abspath(__file__)+'plot.png')  
+
+    filepath = os.path.abspath(__file__)
+    filepath = os.path.dirname(filepath)
+    fig.savefig(filepath+'\\plot.png')  
+
     return None
 
 def Week(day, month, year):
@@ -79,7 +85,11 @@ def Week(day, month, year):
 
     for x in range(0,6):
 
+
         # Aggregates all the data from the hour
+
+        # Aggregates all the data from the day
+
         # Then pipes that output into a group to get an average temperature and the lowest ID
         agr = [ { "$match": {"isoyear": isoyear,
                              "week": week,
@@ -115,7 +125,13 @@ def Week(day, month, year):
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
     plt.show()        # function to show the plot 
+
     fig.savefig(os.path.abspath(__file__)+'plot.png')
+
+    filepath = os.path.abspath(__file__)
+    filepath = os.path.dirname(filepath)
+    fig.savefig(filepath+'\\plot.png') 
+
     return temps
 
 def Month(month, year):
@@ -160,7 +176,13 @@ def Month(month, year):
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
     plt.show()        # function to show the plot 
+
     fig.savefig(os.path.abspath(__file__)+'plot.png')
+
+    filepath = os.path.abspath(__file__)
+    filepath = os.path.dirname(filepath)
+    fig.savefig(filepath+'\\plot.png') 
+
     return temps
 
 def getMonth(month):
@@ -218,11 +240,22 @@ def Year(year):
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
     plt.show()        # function to show the plot 
+
     fig.savefig(os.path.abspath(__file__)+'plot.png')
     return temps
 
 
 def webserver_call_individual(select, day, month, year):
+
+    filepath = os.path.abspath(__file__)
+    filepath = os.path.dirname(filepath)
+    fig.savefig(filepath+'\\plot.png') 
+    return temps
+
+
+
+def main(select,day,month,year):       
+
     if(select==1): # 1 Day selection
         Day(day,month,year)
   
@@ -235,6 +268,7 @@ def webserver_call_individual(select, day, month, year):
     if(select==4): # 1 Year
         Year(year)
 
+
 def webserver_call_all(day, month, year):
     Day(day,month,year)
     Week(day, month, year)
@@ -246,3 +280,7 @@ def main():
 
 # if __name__== "__main__":
 #   main(2,20,2,2020)
+
+if __name__== "__main__":
+  main(2,20,3,2020)
+
