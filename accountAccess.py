@@ -3,7 +3,7 @@ from pymongo import MongoClient
 import hashlib
 
 Client = MongoClient()
-db = Client["userAccounts"]
+db = Client["test"]
 collection = db["Accounts"]
 
 users = collection.find()
@@ -22,15 +22,15 @@ def login(username, password):
 
 def passChange(username,password,newpass):
     """Change password given: username, password, new password"""
-    change = False
-
-    passStr = password.encode('utf-8')
-    passCrypt = hashlib.pbkdf2_hmac('sha256',passStr,b'TeamProjectsSalt',10000)
-    newpassStr = newpass.encode('utf-8')
-    newpassCrypt = hashlib.pbkdf2_hmac('sha256',newpassStr,b'TeamProjectsSalt',10000)
-    collection.find_one_and_update({"username": username, "password":passCrypt.hex()},{'$set': {"password":newpassCrypt.hex()}})
-    if collection.find_one({"username": username, "password":newpassCrypt.hex()}) is not None:
-        change = True
+    change = login(username, password)
+    if change:
+        newpassStr = newpass.encode('utf-8')
+        passStr = password.encode('utf-8')
+        newpassCrypt = hashlib.pbkdf2_hmac('sha256',newpassStr,b'TeamProjectsSalt',10000)
+        passCrypt = hashlib.pbkdf2_hmac('sha256',passStr,b'TeamProjectsSalt',10000)
+        collection.find_one_and_update({"username": username, "password":passCrypt.hex()},{'$set': {"password":newpassCrypt.hex()}})
+        if collection.find_one({"username": username, "password":newpassCrypt.hex()}) is None:
+            change = False
     return change
 
 def userChange(username,password,newuser):
