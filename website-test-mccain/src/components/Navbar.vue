@@ -9,12 +9,18 @@
         <b-nav-item to="/myprivatelife/usage-statistics" exact exact-active-class="active">Usage Statistics</b-nav-item>
         <b-nav-item to="/myprivatelife/user-manual" exact exact-active-class="active">User Manual</b-nav-item>
       </b-navbar-nav>
+      <b-col class="col-md-7"></b-col>
+      <AccessibilityButton />
   </b-navbar>
 </div>
 </template>
 
 <script>
+import AccessibilityButton from "../components/AccessibilityButton";
 export default {
+   components: {
+    AccessibilityButton
+  },
    methods: {
     rotatePage(event) {
       switch (event.srcKey) {
