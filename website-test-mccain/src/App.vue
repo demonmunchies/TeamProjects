@@ -4,19 +4,16 @@
     <b-row class="mb-3">
     </b-row>
     <router-view></router-view>
-    <Footer />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import NavBar from "@/components/Navbar.vue"
-import Footer from "@/components/Footer.vue"
 export default {
   name: "app",
   components: {
-    NavBar,
-    Footer
+    NavBar
   },
 };
 </script>
