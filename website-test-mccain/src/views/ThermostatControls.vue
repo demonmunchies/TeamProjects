@@ -1,9 +1,9 @@
 <template>
-  <div class="thermostat-controls">
+  <div class="thermostat-controls" :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
     <b-row>
     <b-col class="col-md">
       <b-jumbotron header="Temperature" lead="Current Temperature and Controls" :style="{ 'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
-        <TemperatureDisplay />
+        <TemperatureDisplay :key='this.$store.state.currentTemperature'/>
         <div>Increase Temperature <TemperatureUpButton /></div>
         <div>Decrease Temperature <TemperatureDownButton /></div>
       </b-jumbotron>
@@ -14,6 +14,7 @@
         <TimeSelect />
         <TemperatureSelect />
         <AddScheduleButton />
+        <b-table :items='this.$store.state.schedule' :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}"/>
       </b-jumbotron>
     </b-col>
     </b-row>

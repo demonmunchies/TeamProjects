@@ -5,17 +5,26 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-      currentTemperature: 72,
+      currentTemperature: 60, 
       desiredTemperature: 72,
       schedule: [],
       scheduleTime: "",
       scheduleTemp: 72,
       backgroundColor: '#ffffff',
       textColor: '#2c3e50',
-      range: "",
-      date: ""
+      range: -1,
+      day: "",
+      month: "",
+      year: "",
+      activationKey: "",
+      password: "",
+      graphComponentKey: 0,
+      activated: false
     },
     mutations: {
+      incrementGraphComponentKey(state) {
+        state.graphComponentKey++
+      },
       incrementDesiredTemperature(state) {
         if(state.desiredTemperature < 85)
         {
@@ -40,14 +49,17 @@ export const store = new Vuex.Store({
         { 
           if(state.schedule[index].time == state.scheduleTime)
           {
-            state.schedule[index].temp = state.scheduleTemp
+            state.schedule[index].tempemperature = state.scheduleTemp
             found = true
           }
         } 
         if(found == false)
         {
-          state.schedule.push({time: state.scheduleTime, temp: state.scheduleTemp})
+          state.schedule.push({time: state.scheduleTime, temperature: state.scheduleTemp})
         }
+      },
+      initializeSchedule(state, newValue) {
+        state.schedule = newValue
       },
       setBackgroundColor(state, newValue) {
         state.backgroundColor = newValue
@@ -58,8 +70,23 @@ export const store = new Vuex.Store({
       setRange(state, newValue) {
         state.range = newValue
       },
-      setDate(state, newValue) {
-        state.date = newValue
+      setDay(state, newValue) {
+        state.day = newValue
+      },
+      setMonth(state, newValue) {
+        state.month = newValue
+      },
+      setYear(state, newValue) {
+        state.year = newValue
+      },
+      setCurrentTemperature(state, newValue) {
+        state.currentTemperature = newValue
+      },
+      setCurrentActivationKey(state, newValue) {
+        state.activationKey = newValue
+      },
+      setActivated(state, newValue) {
+        state.activated = newValue
       }
     },
     actions: {
@@ -74,6 +101,10 @@ export const store = new Vuex.Store({
       addToSchedule({commit}) {
         commit("addToSchedule")
       },
+      initializeSchedule: ({commit, state}, newValue) => {
+        commit("initializeSchedule", newValue)
+        return state.schedule
+      },
       setBackgroundColor: ({commit, state}, newValue) => {
         commit("setBackgroundColor", newValue)
         return state.backgroundColor
@@ -86,9 +117,29 @@ export const store = new Vuex.Store({
         commit("setRange", newValue)
         return state.range
       },
-      setDate: ({commit, state}, newValue) => {
-        commit("setDate", newValue)
-        return state.date
-      }
-    }
-  })
+      setDay: ({commit, state}, newValue) => {
+        commit("setDay", newValue)
+        return state.day
+      },
+      setMonth: ({commit, state}, newValue) => {
+        commit("setMonth", newValue)
+        return state.month
+      },
+      setYear: ({commit, state}, newValue) => {
+        commit("setYear", newValue)
+        return state.year
+      },
+      setCurrentTemperature: ({commit, state}, newValue) => {
+        commit("setCurrentTemperature", newValue)
+        return state.currentTemperature
+    },
+    setCurrentActivationKey: ({commit, state}, newValue) => {
+      commit("setCurrentActivationKey", newValue)
+      return state.activationKey
+  },
+  setActivated: ({commit, state}, newValue) => {
+    commit("setActivated", newValue)
+    return state.activated
+}
+}
+})

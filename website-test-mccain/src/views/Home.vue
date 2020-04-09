@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :style="{'background-color': $store.state.backgroundColor, 'color': $store.state.textColor}">
     <b-row class="mb-5">
       <b-col class="col-md"></b-col>
       <b-col class="col-md"><h1 class="welcome-text" :style="{'color': $store.state.textColor}">Welcome</h1></b-col>

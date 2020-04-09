@@ -29,7 +29,7 @@ def getLastValue():
 
 def Day(day,month,year):
     temps = np.zeros(24)
-    for x in range(0,23):
+    for x in range(0,24):
 
         # Aggregates all the data from the hour
         # Then pipes that output into a group to get an average temperature and the lowest ID
@@ -67,14 +67,10 @@ def Day(day,month,year):
     plt.xlabel("Day %d/%d/%d" % (month,day,year))          # naming the x axis 
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
-    plt.show()        # function to show the plot 
-
-    fig.savefig(os.path.abspath(__file__)+'plot.png')  
-
+    #plt.show()        # function to show the plot 
     filepath = os.path.abspath(__file__)
     filepath = os.path.dirname(filepath)
-    fig.savefig(filepath+'\\plot.png')  
-
+    fig.savefig(filepath+'\\website-test-mccain\\src\\assets\\plot.png')  
     return None
 
 def Week(day, month, year):
@@ -85,11 +81,7 @@ def Week(day, month, year):
 
     for x in range(0,7):
 
-
-        # Aggregates all the data from the hour
-
         # Aggregates all the data from the day
-
         # Then pipes that output into a group to get an average temperature and the lowest ID
         agr = [ { "$match": {"isoyear": isoyear,
                              "week": week,
@@ -124,14 +116,10 @@ def Week(day, month, year):
     plt.xlabel("Week of %d/%d/%d" % (month,day,year))         # naming the x axis 
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
-    plt.show()        # function to show the plot 
-
-    fig.savefig(os.path.abspath(__file__)+'plot.png')
-
+    #plt.show()        # function to show the plot 
     filepath = os.path.abspath(__file__)
     filepath = os.path.dirname(filepath)
-    fig.savefig(filepath+'\\plot.png') 
-
+    fig.savefig(filepath+'\\website-test-mccain\\src\\assets\\plot.png')  
     return temps
 
 def Month(month, year):
@@ -173,14 +161,10 @@ def Month(month, year):
     plt.xlabel("%s %d" % (month_label,year))         # naming the x axis 
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
-    plt.show()        # function to show the plot 
-
-    fig.savefig(os.path.abspath(__file__)+'plot.png')
-
+    #plt.show()        # function to show the plot 
     filepath = os.path.abspath(__file__)
     filepath = os.path.dirname(filepath)
-    fig.savefig(filepath+'\\plot.png') 
-
+    fig.savefig(filepath+'\\website-test-mccain\\src\\assets\\plot.png')  
     return temps
 
 def getMonth(month):
@@ -237,23 +221,15 @@ def Year(year):
     plt.xlabel("Year %d" % year)         # naming the x axis 
     plt.ylabel('Temperature')         # naming the y axis 
     plt.title('Temperature visualization')         # giving a title to my graph 
-    plt.show()        # function to show the plot 
-
-    fig.savefig(os.path.abspath(__file__)+'plot.png')
-    return temps
-
-
-def webserver_call_individual(select, day, month, year):
-
+    #plt.show()        # function to show the plot 
     filepath = os.path.abspath(__file__)
     filepath = os.path.dirname(filepath)
-    fig.savefig(filepath+'\\plot.png') 
+    fig.savefig(filepath+'\\website-test-mccain\\src\\assets\\plot.png')  
     return temps
 
 
 
 def main(select,day,month,year):       
-
     if(select==1): # 1 Day selection
         Day(day,month,year)
   
@@ -265,24 +241,4 @@ def main(select,day,month,year):
     
     if(select==4): # 1 Year
         Year(year)
-
-
-def webserver_call_all(day, month, year):
-    Day(day,month,year)
-    Week(day, month, year)
-    Month(month,year)
-    Year(year)
-
-def main():
-    print("TemperatureGraphing.py started successfully.")
-
-# if __name__== "__main__":
-#   main(2,20,2,2020)
-
-if __name__== "__main__":
-
-  main(2,20,3,2020)
-
-
-  main(3,20,6,2019)
 
