@@ -49,17 +49,15 @@ export const store = new Vuex.Store({
         { 
           if(state.schedule[index].time == state.scheduleTime)
           {
-            state.schedule[index].tempemperature = state.scheduleTemp
-            found = true
+            state.schedule.splice(index, 1)
           }
         } 
-        if(found == false)
-        {
           state.schedule.push({time: state.scheduleTime, temperature: state.scheduleTemp})
-        }
+          state.schedule.sort(function(a, b){return a.time.localeCompare(b.time)})
       },
       initializeSchedule(state, newValue) {
         state.schedule = newValue
+        state.schedule.sort(function(a, b){return a.time.localeCompare(b.time)})
       },
       setBackgroundColor(state, newValue) {
         state.backgroundColor = newValue
