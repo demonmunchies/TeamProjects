@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 import TemperatureGraphing
+import DynamicInsert
 import ScheduleData
 import accountAccess
 from flask_cors import CORS
@@ -103,14 +104,17 @@ def update_desired_temperature():
 
 # UNSURE IF THIS IS NEEDED
 # Get current temperature
-@app.route('/get_temperature', methods=['GET'])
+@app.route('/insert_temperature', methods=['POST'])
 # Actually update this method to provide functionality
 def send_data():
-	if request.method == 'GET':
-		return '72'
+	if request.method == 'POST':
+		data = json.loads(request.data)
+		temp = int(data['temp'])
+		DynamicInsert.insertValue(temp)
+		return data
 
 if __name__ == '__main__':
     socketio.run(app)
 
-# curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:5000/post' -d '{"data":"I am the data!"}'
+# curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:5000/post' -d '{"temp":"70"}'
 
