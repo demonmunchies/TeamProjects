@@ -113,14 +113,14 @@ def send_data():
 		DynamicInsert.insertValue(temp)
 		return data
 
+# UNSURE IF THIS IS NEEDED
+# Get current temperature
+@app.route('/get_temperature', methods=['GET'])
+def get_data():
+	if request.method == 'GET':
+		return '72'
+
 if __name__ == '__main__':
     socketio.run(app)
 
 # curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:5000/insert_temperature' -d '{"temp":"70"}'
-
-# UNSURE IF THIS IS NEEDED
-# Get current temperature
-@app.route('/get_temperature', methods=['GET'])
-def send_data():
-	if request.method == 'GET':
-		return '72'
